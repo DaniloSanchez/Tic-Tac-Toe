@@ -16,38 +16,44 @@ public class Main {
     public static void main (String[] args){
         Tablero pTablero = new Tablero();
         Cerebro pCerebro = new Cerebro();
-        
         int turno = 0;
         boolean Finalizado = false;
+        
+        
+        
+        
         
         System.out.println("PC: X");
         System.out.println("Human: O");
         
                 
         while( turno < 9 && !Finalizado){
-
-            System.out.println("Turn PC");
-
-            pTablero.setPos("x", 0, 0);
-            pTablero.setPos("o", 0, 1);
-            pTablero.setPos("o", 0, 2);
             
-            pTablero.setPos("x", 1, 0);
-            pTablero.setPos("o", 1, 1);
-            pTablero.setPos("x", 1, 2);
-            
-            pTablero.setPos("o", 2, 0);
-            pTablero.setPos("x", 2, 1);
-            pTablero.setPos("x", 2, 2);
-            
-
+            //=========================//
+            System.out.println("Turno PC");
+            pTablero = pCerebro.turnoPC(pTablero);
             pTablero.printTable();
-            String pchar;
+            
+            
+            //========================//
+            System.out.println("Turno Humano");
+            System.out.println("Digite la Fila: 0 o 1 o 2 ");
+            int pfila = pCerebro.leerDato();
+            System.out.println("Digite la Columna: 0 o 1 o 2 ");
+            int pColumna = pCerebro.leerDato();
+            pTablero.setPos("O", pfila, pColumna);    
+            pTablero.printTable();
+            
+            
+            
+            
+            
+            
 
-
-
-            //InputStreamReader ir = new InputStreamReader(System.in);
-            //BufferedReader in=new BufferedReader(ir);
+            
+            
+            
+            
         
         
         
@@ -55,11 +61,6 @@ public class Main {
         
             turno++;
             Finalizado = pCerebro.estado(pTablero);
-            
-            
-            if(turno == 5 )
-                Finalizado=true;
-            
         }
         
         /**
