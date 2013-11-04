@@ -23,15 +23,23 @@ public class Main {
         System.out.println("PC: X");
         System.out.println("Human: O");
         
-        
-        
-        
-
-            
+                
         while( turno < 9 && !Finalizado){
 
             System.out.println("Turn PC");
 
+            pTablero.setPos("x", 0, 0);
+            pTablero.setPos("o", 0, 1);
+            pTablero.setPos("o", 0, 2);
+            
+            pTablero.setPos("x", 1, 0);
+            pTablero.setPos("o", 1, 1);
+            pTablero.setPos("x", 1, 2);
+            
+            pTablero.setPos("o", 2, 0);
+            pTablero.setPos("x", 2, 1);
+            pTablero.setPos("x", 2, 2);
+            
 
             pTablero.printTable();
             String pchar;

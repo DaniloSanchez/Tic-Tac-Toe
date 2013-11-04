@@ -19,9 +19,14 @@ public class Cerebro {
         boolean columana = columna(tablero);
         boolean diagonal = diagonal(tablero);
         
-        
-        
-        return false;
+        if(fila==true)
+            return true;
+        if( columana == true )
+            return true;
+        if (diagonal == true)
+            return true;
+        else
+            return false;
     }
     
     
