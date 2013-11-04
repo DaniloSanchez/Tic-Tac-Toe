@@ -9,22 +9,43 @@
  * @author Danilo
  */
 public class Tablero {
-    private final String [][] table;
-    public Tablero(){
-        
-        
-    }
+    //dimenciones del table
+    private final String [][] table = {{" "," "," "}, {" ", " ", " "}, {" "," "," "}};
+    
+    //constructor
+    public Tablero(){}
+    
+    /**
+     * 
+     * Metodo que devuelve el valor de una celda
+     * @param a Fina
+     * @param b Columna
+     * @return 
+     */
     public String getPos(int a, int b){
         String actPos = table[a][b];
         return actPos;
     }
+    
+    /**
+     * Cambia el valor de una celda
+     * @param value Nuevo valor de Celda
+     * @param a Fina
+     * @param b Columna
+     */
     public void setPos(String value, int a, int b){
         table[a][b] = value;
     }
     
+    /**
+     * Imprime el todo el tablero Actual
+     */
     public void printTable(){
-        for(int k = 0; k < 3; k++)
-            for(int i = 0; i < 3; i++)
-                System.out.println(table[k][i]);
+        for(int k = 0; k < 3; k++){
+            for(int i = 0; i < 3; i++){
+                System.out.print(table[k][i]);
+            }
+            System.out.println();
+        }
     }
 }

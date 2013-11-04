@@ -8,9 +8,24 @@
  *
  * @author Danilo
  */
+
 public class Main {
     public static void main (String[] args){
-        System.out.println("hola mundo");
+        Tablero pTablero = new Tablero();
+        
+        pTablero.setPos("x", 0, 0);
+        pTablero.setPos("o", 0, 1);
+        pTablero.setPos("x", 0, 2);
+        pTablero.setPos("o", 1, 0);
+        pTablero.setPos("x", 1, 1);
+        pTablero.setPos("x", 1, 2);
+        pTablero.setPos("o", 2, 0);
+        pTablero.setPos("x", 2, 1);
+        pTablero.setPos("o", 2, 2);
+        
+                
+        pTablero.printTable();
+        
+        
     } 
-    
 }
