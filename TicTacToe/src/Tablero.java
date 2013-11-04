@@ -10,7 +10,7 @@
  */
 public class Tablero {
     //dimenciones del table
-    private final String [][] table = {{" "," "," "}, {" ", " ", " "}, {" "," "," "}};
+    private final String [][] table = {{"-","-","-"}, {"-", "-", "-"}, {"-","-","-"}};
     
     //constructor
     public Tablero(){}
