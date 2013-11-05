@@ -133,12 +133,12 @@ public class Cerebro {
                                 break;
                             }
                             if(Table.getPos(1, 0).equals("O")){
-                                Table.setPos("X", 0, 2);
+                                Table.setPos("X", 0, 0);
                                 break;
                             }
 
                             if(Table.getPos(1, 2).equals("O")){
-                                Table.setPos("X", 0, 0);
+                                Table.setPos("X", 0, 2);
                                 break;
                             }
                             
@@ -170,19 +170,51 @@ public class Cerebro {
                 }   
                 break;
             case 2:
+                
                 break;
             case 3:
                 break;
-            case 4:
-                break;
-            case 5:
-                break;
-            case 6:
-                break;
-            case 7:
-                break;
             default:
-                break;
+            {
+                if(Table.getPos(0, 0).equals("-")){
+                    Table.setPos("X", 0, 0);
+                    break;
+                }  
+                if(Table.getPos(0, 1).equals("-")){
+                    Table.setPos("X", 0, 1);
+                    break;
+                } 
+                if(Table.getPos(0, 2).equals("-")){
+                    Table.setPos("X", 0, 2);
+                    break;
+                }  
+                if(Table.getPos(1, 0).equals("-")){
+                    Table.setPos("X", 1, 0);
+                    break;
+                }  
+                if(Table.getPos(1, 1).equals("-")){
+                    Table.setPos("X", 1, 1);
+                    break;
+                }  
+                if(Table.getPos(1, 2).equals("-")){
+                    Table.setPos("X", 1, 2);
+                    break;
+                }  
+                if(Table.getPos(2, 0).equals("-")){
+                    Table.setPos("X", 2, 0);
+                    break;
+                }  
+                if(Table.getPos(2, 1).equals("-")){
+                    Table.setPos("X", 2, 1);
+                    break;
+                }  
+                if(Table.getPos(2, 2).equals("-")){
+                    Table.setPos("X", 2, 2);
+                    break;
+                }  
+            }   
+                    
+                
         }
         return Table;
     }
