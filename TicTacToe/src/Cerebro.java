@@ -165,245 +165,401 @@ public class Cerebro {
                 {
                     int i=0;
                     for(;i<3;i++){
-                        
-
-                        int nX =0;
-                        if(Table.getPos(0, 0).equals("X")&&Table.getPos(0, 2).equals("X")){
-                            if(Table.getPos(0, 1).equals("-")){
-                                Table.setPos("X", 0, 1);
-                                break;
-                            }
-                            else{
-                                if(Table.getPos(0, 1).equals("-")){
-                                    Table.setPos("X", 1, 1);
-                                    break;
-                                }
-                            }
-                        }
                         if(Table.getPos(0, 0).equals("X")&&Table.getPos(2, 0).equals("X")){
-                            if(Table.getPos(1, 0).equals("-")){
-                                Table.setPos("X", 1, 0);
+                            if(Table.getPos(0, 2).equals("O")){
+                                Table.setPos("X", 2, 2);
                                 break;
                             }else{
-                                if(Table.getPos(1, 1).equals("-")){
-                                    Table.setPos("X", 1, 1);
+                                if(Table.getPos(2, 2).equals("O")){
+                                    Table.setPos("X", 0, 2);
                                     break;
                                 }
                             }
-                            break;
                         }
-                        if(Table.getPos(0, 0).equals("X")&&Table.getPos(2, 2).equals("X")){
-                            if(Table.getPos(1, 0).equals("O")){
-                                Table.setPos("X", 1, 2);
-                                break;
-                            }else{
-                                if(Table.getPos(1, 2).equals("O")){
-                                    Table.setPos("X", 1, 0);
-                                    break;
-                                }
-                            }
+                        Table.GirarDerecha();
+                    }
+                    i=0;
+                    for(;i<3;i++){
+                        if(Table.getPos(0, 0).equals("X")&&Table.getPos(2, 0).equals("X")){
                             if(Table.getPos(0, 1).equals("O")){
-                                Table.setPos("X", 2, 1);
+                                Table.setPos("X", 2, 2);
                                 break;
                             }else{
                                 if(Table.getPos(2, 1).equals("O")){
-                                    Table.setPos("X", 0, 1);
+                                    Table.setPos("X", 0, 2);
                                     break;
                                 }
                             }
-                            
                         }
                         Table.GirarDerecha();
                     }
+                    /*diaganal*/
+                    if(Table.getPos(0, 0).equals("X")&&Table.getPos(2, 2).equals("X")){
+                        if(Table.getPos(0, 1).equals("O")){
+                            Table.setPos("X", 2, 1);
+                            break;
+                        }else{
+                            if(Table.getPos(0, 2).equals("O")){
+                                Table.setPos("X", 2, 0);
+                                break;
+                            }else{
+                                if(Table.getPos(1, 0).equals("O")){
+                                    Table.setPos("X", 1, 2);
+                                    break;
+                                }else{
+                                    if(Table.getPos(1, 2).equals("O")){
+                                        Table.setPos("X", 1, 0);
+                                        break;
+                                    }else{
+                                        if(Table.getPos(2, 0).equals("O")){
+                                            Table.setPos("X", 0, 2);
+                                            break;
+                                        }else{
+                                            if(Table.getPos(2, 1).equals("O")){
+                                                Table.setPos("X", 0, 1);
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    /*recta*/
+                    if(Table.getPos(0, 1).equals("X")&&Table.getPos(2, 1).equals("X")){
+                        if(Table.getPos(0, 0).equals("O")){
+                            Table.setPos("X", 2, 2);
+                            break;
+                        }else{
+                            if(Table.getPos(2, 2).equals("O")){
+                                Table.setPos("X", 0, 0);
+                                break;
+                            }else{
+                                if(Table.getPos(1, 0).equals("O")){
+                                    Table.setPos("X", 1, 2);
+                                    break;
+                                }else{
+                                    if(Table.getPos(1, 2).equals("O")){
+                                        Table.setPos("X", 1, 0);
+                                        break;
+                                    }else{
+                                        if(Table.getPos(0, 2).equals("O")){
+                                            Table.setPos("X", 2, 0);
+                                            break;
+                                        }else{
+                                            if(Table.getPos(2, 0).equals("O")){
+                                                Table.setPos("X", 0, 2);
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    /*Horizontal*/
+                    if(Table.getPos(1, 0).equals("X")&&Table.getPos(1, 2).equals("X")){
+                        if(Table.getPos(0, 0).equals("O")){
+                            Table.setPos("X", 2, 2);
+                            break;
+                        }else{
+                            if(Table.getPos(2, 2).equals("O")){
+                                Table.setPos("X", 0, 0);
+                                break;
+                            }else{
+                                if(Table.getPos(0, 0).equals("O")){
+                                    Table.setPos("X", 2, 2);
+                                    break;
+                                }else{
+                                    if(Table.getPos(2, 2).equals("O")){
+                                        Table.setPos("X", 0, 0);
+                                        break;
+                                    }else{
+                                        if(Table.getPos(0, 2).equals("O")){
+                                            Table.setPos("X", 2, 0);
+                                            break;
+                                        }else{
+                                            if(Table.getPos(2, 0).equals("O")){
+                                                Table.setPos("X", 0, 2);
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                        
+                    
+                    
                     if(i==1)
                         Table.GirarIzquierda();
-                    if(i==2){
+                    else if(i==2){
                         Table.GirarIzquierda();
                         Table.GirarIzquierda();
-                    }
-                    if(i==3){
+                    }else if(i==3){
                         Table.GirarDerecha();
                     }
+                    
+                        
                     
                 }
                 break;
             case 3:
                 {
-                    
+                    boolean estad = true;
                     /*primera finla*/
-                    for(int i = 0; i < 3; i++)
-                        if(Table.getPos(i, 0).equals("-")){
-                            if(Table.getPos(i,1).equals("X")&&Table.getPos(i,2).equals("X")){
-                                Table.setPos("X", i, 0);
-                                break;
+                    if(estad){
+                        for(int i = 0; i < 3; i++)
+                            if(Table.getPos(i, 0).equals("-")){
+                                if(Table.getPos(i,1).equals("X")&&Table.getPos(i,2).equals("X")){
+                                    Table.setPos("X", i, 0);
+                                    estad=false;
+                                    break;
+                                }
                             }
-                        }
+                    }
                     /*segunda fila*/
-                    for(int i = 0; i < 3; i++)
-                        if(Table.getPos(i, 1).equals("-")){
-                            if(Table.getPos(i,0).equals("X")&&Table.getPos(i,2).equals("X")){
-                                Table.setPos("X", i, 1);
-                                break;
+                    if(estad){
+                        for(int i = 0; i < 3; i++)
+                            if(Table.getPos(i, 1).equals("-")){
+                                if(Table.getPos(i,0).equals("X")&&Table.getPos(i,2).equals("X")){
+                                    Table.setPos("X", i, 1);
+                                    estad=false;
+                                    break;
+                                }
                             }
-                        }
+                    }
                     /*tercera fila*/
-                    for(int i = 0; i < 3; i++)
-                        if(Table.getPos(i, 2).equals("-")){
-                            if(Table.getPos(i,0).equals("X")&&Table.getPos(i,1).equals("X")){
-                                Table.setPos("X", i, 2);
-                                break;
+                    if(estad){
+                        for(int i = 0; i < 3; i++)
+                            if(Table.getPos(i, 2).equals("-")){
+                                if(Table.getPos(i,0).equals("X")&&Table.getPos(i,1).equals("X")){
+                                    Table.setPos("X", i, 2);
+                                    estad=false;
+                                    break;
+                                }
                             }
-                        }
+                    }
                     
                     /*primera columa*/
+                    if(estad){
                     for(int i = 0; i < 3; i++)
                         if(Table.getPos(0, i).equals("-")){
                             if(Table.getPos(1,i).equals("X")&&Table.getPos(2,i).equals("X")){
                                 Table.setPos("X", 0, i);
+                                estad=false;
                                 break;
                             }
                         }
+                    }
                     /*segunda columa*/
+                    if(estad){
                     for(int i = 0; i < 3; i++)
                         if(Table.getPos(1, i).equals("-")){
                             if(Table.getPos(0,i).equals("X")&&Table.getPos(2,i).equals("X")){
                                 Table.setPos("X", 1, i);
+                                estad=false;
                                 break;
                             }
                         }
+                    }
                     /*tercera columa*/
+                    if(estad){
                     for(int i = 0; i < 3; i++)
                         if(Table.getPos(2, i).equals("-")){
                             if(Table.getPos(0,i).equals("X")&&Table.getPos(1,i).equals("X")){
                                 Table.setPos("X", 2, i);
+                                estad=false;
                                 break;
                             }
                         }
+                    }
                     /*diagonal columa*/
-                    if(Table.getPos(0, 0).equals("-")){
-                        if(Table.getPos(1,1).equals("X")&&Table.getPos(2,2).equals("X")){
-                            Table.setPos("X", 0, 0);
-                            break;
+                    if(estad){
+                        if(Table.getPos(0, 0).equals("-")){
+                            if(Table.getPos(1,1).equals("X")&&Table.getPos(2,2).equals("X")){
+                                Table.setPos("X", 0, 0);
+                                estad=false;
+                                break;
+                            }
                         }
                     }
-                    if(Table.getPos(1, 1).equals("-")){
-                        if(Table.getPos(0,0).equals("X")&&Table.getPos(2,2).equals("X")){
-                            Table.setPos("X", 1, 1);
-                            break;
+                    
+                    if(estad){
+                        if(Table.getPos(1, 1).equals("-")){
+                            if(Table.getPos(0,0).equals("X")&&Table.getPos(2,2).equals("X")){
+                                Table.setPos("X", 1, 1);
+                                estad=false;
+                                break;
+                            }
                         }
                     }
-                    if(Table.getPos(2, 2).equals("-")){
-                        if(Table.getPos(0,0).equals("X")&&Table.getPos(1,1).equals("X")){
-                            Table.setPos("X", 2, 2);
-                            break;
+                    
+                    if(estad){
+                        if(Table.getPos(2, 2).equals("-")){
+                            if(Table.getPos(0,0).equals("X")&&Table.getPos(1,1).equals("X")){
+                                Table.setPos("X", 2, 2);
+                                estad=false;
+                                break;
+                            }
                         }
                     }
+                    
                     /*diagonal inversa*/
-                    if(Table.getPos(0, 2).equals("-")){
-                        if(Table.getPos(1,1).equals("X")&&Table.getPos(2,0).equals("X")){
-                            Table.setPos("X", 0, 2);
-                            break;
+                    if(estad){
+                        if(Table.getPos(0, 2).equals("-")){
+                            if(Table.getPos(1,1).equals("X")&&Table.getPos(2,0).equals("X")){
+                                Table.setPos("X", 0, 2);
+                                estad=false;
+                                break;
+                            }
                         }
                     }
-                    if(Table.getPos(1, 1).equals("-")){
-                        if(Table.getPos(0,2).equals("X")&&Table.getPos(2,0).equals("X")){
-                            Table.setPos("X", 1, 1);
-                            break;
+                    
+                    if(estad){
+                        if(Table.getPos(1, 1).equals("-")){
+                            if(Table.getPos(0,2).equals("X")&&Table.getPos(2,0).equals("X")){
+                                Table.setPos("X", 1, 1);
+                                estad=false;
+                                break;
+                            }
                         }
                     }
-                    if(Table.getPos(2, 0).equals("-")){
-                        if(Table.getPos(1,1).equals("X")&&Table.getPos(0,2).equals("X")){
-                            Table.setPos("X", 2, 0);
-                            break;
+                    
+                    
+                    if(estad){
+                        if(Table.getPos(2, 0).equals("-")){
+                            if(Table.getPos(1,1).equals("X")&&Table.getPos(0,2).equals("X")){
+                                Table.setPos("X", 2, 0);
+                                estad=false;
+                                break;
+                            }
                         }
                     }
                     /*En defensa*/
                     /*primera finla*/
+                    if(estad){
                     for(int i = 0; i < 3; i++)
                         if(Table.getPos(i, 0).equals("-")){
                             if(Table.getPos(i,1).equals("O")&&Table.getPos(i,2).equals("O")){
                                 Table.setPos("X", i, 0);
-                                break;
+                                estad=false; break;
                             }
                         }
+                    }
                     /*segunda fila*/
+                    if(estad){
                     for(int i = 0; i < 3; i++)
                         if(Table.getPos(i, 1).equals("-")){
                             if(Table.getPos(i,0).equals("O")&&Table.getPos(i,2).equals("O")){
                                 Table.setPos("X", i, 1);
-                                break;
+                                estad=false; break;
                             }
                         }
+                    }
                     /*tercera fila*/
+                    if(estad){
                     for(int i = 0; i < 3; i++)
                         if(Table.getPos(i, 2).equals("-")){
                             if(Table.getPos(i,0).equals("O")&&Table.getPos(i,1).equals("O")){
                                 Table.setPos("X", i, 2);
-                                break;
+                                estad=false; break;
                             }
                         }
+                    }
                     
                     /*primera columa*/
+                    if(estad){
                     for(int i = 0; i < 3; i++)
                         if(Table.getPos(0, i).equals("-")){
                             if(Table.getPos(1,i).equals("O")&&Table.getPos(2,i).equals("O")){
                                 Table.setPos("X", 0, i);
-                                break;
+                                estad=false; break;
                             }
                         }
+                    }
                     /*segunda columa*/
+                    if(estad){
                     for(int i = 0; i < 3; i++)
                         if(Table.getPos(1, i).equals("-")){
                             if(Table.getPos(0,i).equals("O")&&Table.getPos(2,i).equals("O")){
                                 Table.setPos("X", 1, i);
-                                break;
+                                estad=false; break;
                             }
                         }
+                    }
                     /*tercera columa*/
+                    if(estad){
                     for(int i = 0; i < 3; i++)
                         if(Table.getPos(2, i).equals("-")){
                             if(Table.getPos(0,i).equals("O")&&Table.getPos(1,i).equals("O")){
                                 Table.setPos("X", 2, i);
-                                break;
+                                estad=false; break;
                             }
                         }
+                    }
                     /*diagonal columa*/
+                    if(estad){
                     if(Table.getPos(0, 0).equals("-")){
                         if(Table.getPos(1,1).equals("O")&&Table.getPos(2,2).equals("O")){
                             Table.setPos("X", 0, 0);
-                            break;
+                            estad=false; break;
                         }
                     }
+                    }
+                    
+                    if(estad){
                     if(Table.getPos(1, 1).equals("-")){
                         if(Table.getPos(0,0).equals("O")&&Table.getPos(2,2).equals("O")){
                             Table.setPos("X", 1, 1);
-                            break;
+                            estad=false; break;
                         }
                     }
+                    }
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    if(estad){
                     if(Table.getPos(2, 2).equals("-")){
                         if(Table.getPos(0,0).equals("O")&&Table.getPos(1,1).equals("O")){
                             Table.setPos("X", 2, 2);
-                            break;
+                            estad=false; break;
                         }
                     }
+                    }
                     /*diagonal inversa*/
+                    if(estad){
                     if(Table.getPos(0, 2).equals("-")){
                         if(Table.getPos(1,1).equals("O")&&Table.getPos(2,0).equals("O")){
                             Table.setPos("X", 0, 2);
-                            break;
+                            estad=false; break;
                         }
                     }
+                    }
+                    
+                    
+                    if(estad){
                     if(Table.getPos(1, 1).equals("-")){
                         if(Table.getPos(0,2).equals("O")&&Table.getPos(2,0).equals("O")){
                             Table.setPos("X", 1, 1);
-                            break;
+                            estad=false; break;
                         }
                     }
+                    }
+                    
+                    if(estad){
                     if(Table.getPos(2, 0).equals("-")){
                         if(Table.getPos(1,1).equals("O")&&Table.getPos(0,2).equals("O")){
                             Table.setPos("X", 2, 0);
-                            break;
+                            estad=false; break;
                         }
+                    }
                     }
                     
                     
