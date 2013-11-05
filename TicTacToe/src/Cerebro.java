@@ -61,32 +61,113 @@ public class Cerebro {
         switch(Turno){
             case 1:
                 /*juego en equina*/
-                if(Table.getPos(0, 0).equals("X")){
-                    if(Table.getPos(0, 1).equals("O")) Table.setPos("X", 2, 0);
-                    
-                    if(Table.getPos(1, 0).equals("O")) Table.setPos("X", 0, 2);
-                    
-                    if(Table.getPos(2, 1).equals("O")) Table.setPos("X", 0, 2);
-                    
-                    if(Table.getPos(1, 2).equals("O")) Table.setPos("X", 2, 0);
-                    
+                {
+                    int i=0;
+                    for(; i < 4 ; i++){
+                        if(Table.getPos(0, 0).equals("X")){
+                            if(Table.getPos(0, 1).equals("O")){
+                                Table.setPos("X", 2, 0);
+                                break;
+                            }
+                            if(Table.getPos(2, 1).equals("O")){
+                                Table.setPos("X", 2, 0);
+                                break;
+                            }
+
+                            if(Table.getPos(1, 0).equals("O")){
+                                Table.setPos("X", 0, 2);
+                                break;
+                            }
+                            if(Table.getPos(1, 2).equals("O")){
+                                Table.setPos("X", 0, 2);
+                                break;
+                            }
+
+                            if(Table.getPos(0, 2).equals("O")){
+                                Table.setPos("X", 2, 0);
+                                break;
+                            }
+                            if(Table.getPos(2, 0).equals("O")){
+                                Table.setPos("X", 0, 2);
+                                break;
+                            }
+                            if(Table.getPos(2, 2).equals("O")){
+                                Table.setPos("X", 2, 0);
+                                break;
+                            }
+
+                            if(Table.getPos(1, 1).equals("O")){
+                                Table.setPos("X", 2, 2);
+                                break;
+                            }
+
+                        }
+                        Table.GirarDerecha();
+                    }
+                    if(i==1)
+                        Table.GirarIzquierda();
+                    else if(i==2){
+                        Table.GirarIzquierda();
+                        Table.GirarIzquierda();
+                    }else if(i==3){
+                        Table.GirarDerecha();
+                    }
                 }
-                if(Table.getPos(0, 2).equals("X")){
-                    if(Table.getPos(0, 1).equals("O"))
-                        Table.setPos("X", 2, 0);
-                    
-                    if(Table.getPos(1, 0).equals("O"))
-                        Table.setPos("X", 0, 2);
-                    
-                    if(Table.getPos(2, 1).equals("O"))
-                        Table.setPos("X", 0, 2);
-                    
-                    if(Table.getPos(1, 2).equals("O"))
-                        Table.setPos("X", 2, 0);
-                    
-                }
-                
-                    
+                {
+                    /*juego en lateral*/
+                    int i=0;
+                    for(; i < 4 ; i++){
+                        if(Table.getPos(0, 1).equals("X")){
+                            if(Table.getPos(2, 0).equals("O")){
+                                Table.setPos("X", 0, 0);
+                                break;
+                            }
+                            
+                            if(Table.getPos(2, 2).equals("O")){
+                                Table.setPos("X", 0, 2);
+                                break;
+                            }
+
+                            if(Table.getPos(2, 1).equals("O")){
+                                Table.setPos("X", 1, 1);
+                                break;
+                            }
+                            if(Table.getPos(1, 0).equals("O")){
+                                Table.setPos("X", 0, 2);
+                                break;
+                            }
+
+                            if(Table.getPos(1, 2).equals("O")){
+                                Table.setPos("X", 0, 0);
+                                break;
+                            }
+                            
+                            if(Table.getPos(0, 2).equals("O")){
+                                Table.setPos("X", 2, 1);
+                                break;
+                            }
+                            if(Table.getPos(0, 0).equals("O")){
+                                Table.setPos("X", 2, 1);
+                                break;
+                            }
+
+                            if(Table.getPos(1, 1).equals("O")){
+                                Table.setPos("X", 2, 1);
+                                break;
+                            }
+
+                        }
+                        Table.GirarDerecha();
+                    }
+                    if(i==1)
+                        Table.GirarIzquierda();
+                    else if(i==2){
+                        Table.GirarIzquierda();
+                        Table.GirarIzquierda();
+                    }else if(i==3){
+                        Table.GirarDerecha();
+                    }
+                }   
                 break;
             case 2:
                 break;

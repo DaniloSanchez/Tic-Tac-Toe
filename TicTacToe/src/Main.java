@@ -20,8 +20,17 @@ public class Main {
         
         System.out.println("PC: X");
         System.out.println("Human: O");
-        
-                
+        /*
+            pTablero.setPos("0", 0, 0);
+            pTablero.setPos("1", 0, 1);
+            pTablero.setPos("2", 0, 2);
+            pTablero.setPos("3", 1, 0);
+            pTablero.setPos("4", 1, 1);
+            pTablero.setPos("5", 1, 2);
+            pTablero.setPos("6", 2, 0);
+            pTablero.setPos("7", 2, 2);
+            pTablero.setPos("8", 2, 1);
+          */  
         while( turno < 9 && !Finalizado){
             //=========================//
             System.out.println("Turno PC");

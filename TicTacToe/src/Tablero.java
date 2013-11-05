@@ -49,7 +49,7 @@ public class Tablero {
         }
     }
     
-    public String[][] GirarD(){
+    public String[][] GirarDerecha(){
         String [][] tableAux = {{"-","-","-"}, {"-", "-", "-"}, {"-","-","-"}};
         tableAux[0][2]=_table[0][0];
         tableAux[1][2]=_table[0][1];
@@ -63,7 +63,7 @@ public class Tablero {
         _table = tableAux;
         return  tableAux;
     }
-    public String[][] Girar(){
+    public String[][] GirarIzquierda(){
         String [][] tableAux = {{"-","-","-"}, {"-", "-", "-"}, {"-","-","-"}};
         tableAux[2][0]=_table[0][0];
         tableAux[1][0]=_table[0][1];
