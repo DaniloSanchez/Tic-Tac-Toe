@@ -10,7 +10,7 @@
  */
 public class Tablero {
     //dimenciones del table
-    private final String [][] table = {{"-","-","-"}, {"-", "-", "-"}, {"-","-","-"}};
+    private final String [][] _table = {{"-","-","-"}, {"-", "-", "-"}, {"-","-","-"}};
     
     //constructor
     public Tablero(){}
@@ -23,7 +23,7 @@ public class Tablero {
      * @return 
      */
     public String getPos(int a, int b){
-        String actPos = table[a][b];
+        String actPos = _table[a][b];
         return actPos;
     }
     
@@ -34,7 +34,7 @@ public class Tablero {
      * @param b Columna
      */
     public void setPos(String value, int a, int b){
-        table[a][b] = value;
+        _table[a][b] = value;
     }
     
     /**
@@ -43,7 +43,7 @@ public class Tablero {
     public void printTable(){
         for(int k = 0; k < 3; k++){
             for(int i = 0; i < 3; i++){
-                System.out.print(table[k][i]);
+                System.out.print(_table[k][i]);
             }
             System.out.println();
         }

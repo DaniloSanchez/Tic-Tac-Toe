@@ -1,6 +1,3 @@
-
-import java.io.*;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -16,11 +13,9 @@ public class Main {
     public static void main (String[] args){
         Tablero pTablero = new Tablero();
         Cerebro pCerebro = new Cerebro();
+        
         int turno = 0;
         boolean Finalizado = false;
-        
-        
-        
         
         
         System.out.println("PC: X");
@@ -28,13 +23,10 @@ public class Main {
         
                 
         while( turno < 9 && !Finalizado){
-            
             //=========================//
             System.out.println("Turno PC");
-            pTablero = pCerebro.turnoPC(pTablero);
+            pTablero = pCerebro.turnoPC(pTablero,turno);
             pTablero.printTable();
-            
-            
             //========================//
             System.out.println("Turno Humano");
             System.out.println("Digite la Fila: 0 o 1 o 2 ");
@@ -43,26 +35,14 @@ public class Main {
             int pColumna = pCerebro.leerDato();
             pTablero.setPos("O", pfila, pColumna);    
             pTablero.printTable();
-            
-            
-            
-            
-            
-            
-
-            
-            
-            
-            
-        
-        
-        
-            
-        
+            //=======================================/
+            /**
+             * Actualiza el contador del turno 
+             * Verifica si existe un ganado con el tablero actual
+             */
             turno++;
             Finalizado = pCerebro.estado(pTablero);
         }
-        
         /**
          * Imprime el Resultado Final de la Partida
          */

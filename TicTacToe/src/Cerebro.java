@@ -12,16 +12,59 @@ import java.io.*;
  * @author Danilo
  */
 public class Cerebro {
-    private InputStreamReader ir;
-    private BufferedReader in;
-    private String dato;    
+    private InputStreamReader _ir;
+    private BufferedReader _in;
+    private String _dato;    
     
     public Cerebro() {}
     
     
-    public Tablero turnoPC(Tablero Table){
+    /**
+     * Movimiento Inteligente de la PC
+     * @param Table Estado actual del tablero.
+     * @param turno Turno Actual de Juego
+     * @return 
+     */
+    public Tablero turnoPC(Tablero Table,int turno){
+        if(turno==0)
+            Table = PrimerMovimiento(Table);
+        else
+            Table =nMovimiento(Table);
         return Table;
+        
     }
+    
+    
+    /**
+     * El primer Movimiento es random pero, debe de ser diferente al centro.
+     * @param Table
+     * @return Tablero despues del primer Movimiento
+     */
+    private Tablero PrimerMovimiento(Tablero Table){
+        int pfila = ((int)(Math.random()*100)%3);
+        int pColumna = ((int)(Math.random()*100)%3);
+        
+        while(pfila == 1 && pColumna ==1){
+            pfila = ((int)(Math.random()*100)%3);
+            pColumna = ((int)(Math.random()*100)%3);
+        }
+        
+        Table.setPos("X", pfila, pColumna);
+        
+        
+        System.out.println(pfila);
+        System.out.println(pColumna);
+                
+        return  Table;
+    }
+    
+    private Tablero nMovimiento(Tablero Table){
+        return Table;
+        
+    }
+    
+    
+    
     
     /**
      * Revisa el Estado del Table para saber si hay un ganador
@@ -99,11 +142,11 @@ public class Cerebro {
      * @return 
      */
     public int leerDato(){
-        ir = new InputStreamReader(System.in);
-        in=new BufferedReader(ir);
+        _ir = new InputStreamReader(System.in);
+        _in=new BufferedReader(_ir);
         try{
-            dato = in.readLine();
-            int idato = Integer.parseInt(dato);
+            _dato = _in.readLine();
+            int idato = Integer.parseInt(_dato);
             return idato;
         }catch (Exception ex){
             return -1;
