@@ -29,7 +29,7 @@ public class Cerebro {
         if(turno==0)
             Table = PrimerMovimiento(Table);
         else
-            Table =nMovimiento(Table);
+            Table =nMovimiento(Table,turno);
         return Table;
         
     }
@@ -47,20 +47,63 @@ public class Cerebro {
         while(pfila == 1 && pColumna ==1){
             pfila = ((int)(Math.random()*100)%3);
             pColumna = ((int)(Math.random()*100)%3);
-        }
-        
+        }        
         Table.setPos("X", pfila, pColumna);
-        
-        
-        System.out.println(pfila);
-        System.out.println(pColumna);
-                
         return  Table;
     }
     
-    private Tablero nMovimiento(Tablero Table){
+    /**
+     * Es el Enesimo movimiento de la PC
+     * @param Table
+     * @return El tablero despues del movimiento hecho por la PC
+     */
+    private Tablero nMovimiento(Tablero Table,int Turno){
+        switch(Turno){
+            case 1:
+                /*juego en equina*/
+                if(Table.getPos(0, 0).equals("X")){
+                    if(Table.getPos(0, 1).equals("O")) Table.setPos("X", 2, 0);
+                    
+                    if(Table.getPos(1, 0).equals("O")) Table.setPos("X", 0, 2);
+                    
+                    if(Table.getPos(2, 1).equals("O")) Table.setPos("X", 0, 2);
+                    
+                    if(Table.getPos(1, 2).equals("O")) Table.setPos("X", 2, 0);
+                    
+                }
+                if(Table.getPos(0, 2).equals("X")){
+                    if(Table.getPos(0, 1).equals("O"))
+                        Table.setPos("X", 2, 0);
+                    
+                    if(Table.getPos(1, 0).equals("O"))
+                        Table.setPos("X", 0, 2);
+                    
+                    if(Table.getPos(2, 1).equals("O"))
+                        Table.setPos("X", 0, 2);
+                    
+                    if(Table.getPos(1, 2).equals("O"))
+                        Table.setPos("X", 2, 0);
+                    
+                }
+                
+                    
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            case 7:
+                break;
+            default:
+                break;
+        }
         return Table;
-        
     }
     
     

@@ -10,7 +10,7 @@
  */
 public class Tablero {
     //dimenciones del table
-    private final String [][] _table = {{"-","-","-"}, {"-", "-", "-"}, {"-","-","-"}};
+    private String [][] _table = {{"-","-","-"}, {"-", "-", "-"}, {"-","-","-"}};
     
     //constructor
     public Tablero(){}
@@ -47,5 +47,34 @@ public class Tablero {
             }
             System.out.println();
         }
+    }
+    
+    public String[][] GirarD(){
+        String [][] tableAux = {{"-","-","-"}, {"-", "-", "-"}, {"-","-","-"}};
+        tableAux[0][2]=_table[0][0];
+        tableAux[1][2]=_table[0][1];
+        tableAux[2][2]=_table[0][2];
+        tableAux[0][1]=_table[1][0];
+        tableAux[1][1]=_table[1][1];
+        tableAux[2][1]=_table[1][2];
+        tableAux[0][0]=_table[2][0];
+        tableAux[1][0]=_table[2][1];
+        tableAux[2][0]=_table[2][2];
+        _table = tableAux;
+        return  tableAux;
+    }
+    public String[][] Girar(){
+        String [][] tableAux = {{"-","-","-"}, {"-", "-", "-"}, {"-","-","-"}};
+        tableAux[2][0]=_table[0][0];
+        tableAux[1][0]=_table[0][1];
+        tableAux[0][0]=_table[0][2];
+        tableAux[2][1]=_table[1][0];
+        tableAux[1][1]=_table[1][1];
+        tableAux[0][1]=_table[1][2];
+        tableAux[2][2]=_table[2][0];
+        tableAux[1][2]=_table[2][1];
+        tableAux[0][2]=_table[2][2];
+        _table = tableAux;
+        return  tableAux;
     }
 }
