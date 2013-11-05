@@ -170,9 +170,70 @@ public class Cerebro {
                 }   
                 break;
             case 2:
-                
+                {
+                    int i=0;
+                    for(;i<3;i++){
+                        
+
+                        int nX =0;
+                        if(Table.getPos(0, 0).equals("X")&&Table.getPos(0, 2).equals("X")){
+                            if(Table.getPos(0, 1).equals("-")){
+                                Table.setPos("X", 0, 1);
+                                break;
+                            }
+                            else{
+                                if(Table.getPos(0, 1).equals("-")){
+                                    Table.setPos("X", 1, 1);
+                                    break;
+                                }
+                            }
+                        }
+                        if(Table.getPos(0, 0).equals("X")&&Table.getPos(2, 0).equals("X")){
+                            if(Table.getPos(1, 0).equals("-")){
+                                Table.setPos("X", 1, 0);
+                                break;
+                            }else{
+                                if(Table.getPos(1, 1).equals("-")){
+                                    Table.setPos("X", 1, 1);
+                                    break;
+                                }
+                            }
+                            break;
+                        }
+                        if(Table.getPos(0, 0).equals("X")&&Table.getPos(2, 2).equals("X")){
+                            if(Table.getPos(1, 0).equals("O")){
+                                Table.setPos("X", 1, 2);
+                                break;
+                            }else{
+                                if(Table.getPos(1, 2).equals("O")){
+                                    Table.setPos("X", 1, 0);
+                                    break;
+                                }
+                            }
+                            if(Table.getPos(0, 1).equals("O")){
+                                Table.setPos("X", 2, 1);
+                                break;
+                            }else{
+                                if(Table.getPos(2, 1).equals("O")){
+                                    Table.setPos("X", 0, 1);
+                                    break;
+                                }
+                            }
+                            
+                        }
+                        Table.GirarDerecha();
+                    }
+                    if(i==1)
+                        Table.GirarIzquierda();
+                    if(i==2){
+                        Table.GirarIzquierda();
+                        Table.GirarIzquierda();
+                    }
+                }
+                //analizarFactorError(Table);
                 break;
             case 3:
+                //analizarFactorError(Table);
                 break;
             default:
             {
@@ -307,5 +368,17 @@ public class Cerebro {
         }catch (Exception ex){
             return -1;
         }
+    }
+    
+    private Tablero analizarFactorError(Tablero Table){
+        
+        
+        return Table;
+    }
+    private Tablero analifarFilas(Tablero Table){
+        if(Table.getPos(0, 0).equals("0")){
+        }
+        
+        return Table;
     }
 }

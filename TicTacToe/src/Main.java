@@ -31,12 +31,21 @@ public class Main {
             pTablero.setPos("7", 2, 2);
             pTablero.setPos("8", 2, 1);
           */  
-        while( turno < 9 && !Finalizado){
+        while( turno < 5 && !Finalizado){
             //=========================//
             System.out.println("Turno PC");
             pTablero = pCerebro.turnoPC(pTablero,turno);
             pTablero.printTable();
             //========================//
+            
+            if(turno == 4)
+                break;
+            
+            Finalizado = pCerebro.estado(pTablero);
+            
+            if(Finalizado==true)
+                break;
+            
             System.out.println("Turno Humano");
             System.out.println("Digite la Fila: 0 o 1 o 2 ");
             int pfila = pCerebro.leerDato();
